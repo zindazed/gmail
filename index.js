@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("welcome to my forma");
+  res.send("welcome to the Google API by ByteMontan");
 });
 
 app.post("/api/forma", async (req, res) => {
