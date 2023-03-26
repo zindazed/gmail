@@ -20,7 +20,7 @@ app.post("/api/forma", async (req, res) => {
   const CLEINT_SECRET = "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";
   const REDIRECT_URI = "https://developers.google.com/oauthplayground";
   const REFRESH_TOKEN =
-    "1//04p41O8426VxhCgYIARAAGAQSNwF-L9IrA7Q_TPEd4qubTgq6j9OK0yehehkvuMqCTWzkliWWl68lESvfbI_nhlIgwXxvZKaz98g";
+    "1//04yoXlNNElO0bCgYIARAAGAQSNwF-L9IrQNpv9qvYr-6LIEJFTxuta0xb6utUxoOfNcyOUJx_FjoNgiSU5s4vD74-94TUa-0nDfM";
 
   const oAuth2Client = new google.auth.OAuth2(
     CLIENT_ID,
@@ -43,6 +43,7 @@ app.post("/api/forma", async (req, res) => {
       accessToken: accessToken,
     },
   });
+  console.log(`Recieved: ${data}`);
 
   let mailOptions = {
     from: `${data.name} <zindazed@gmail.com>`,
@@ -68,7 +69,7 @@ app.post("/api/forma", async (req, res) => {
   smtpTransport.close();
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
   console.log(`server starting at port ${PORT}`);
 });
