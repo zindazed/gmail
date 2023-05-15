@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("welcome to the Google API by ByteMontan");
+  res.send("welcome to the Google API v2 by ByteMontan");
 });
 
 app.post("/api/forma", async (req, res) => {
@@ -61,8 +61,10 @@ app.post("/api/forma", async (req, res) => {
   smtpTransport.sendMail(mailOptions, (error, response) => {
     if (error) {
       res.send(error);
+      console.log(`failed`);
     } else {
       res.send("Success");
+      console.log(`sent successfully`);
     }
   });
 
